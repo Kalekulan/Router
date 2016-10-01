@@ -13,12 +13,17 @@ wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hos
 #wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainAdditions.txt -O $additionListPath
 
 
-while (( ps | grep -v "grep" | grep -qF "dnsmasq" 2>/dev/null )) || (( $retry -le 3 ))
+while (( ps | grep -v "grep" | grep -qF "dnsmasq" 2>/dev/null )) #|| (( $retry -le 3 ))
 do
+		echo Trying to kill dnsmasq... Attempt $retry
         killall dnsmasq
-        sleep 2
-        echo Trying to kill dnsmasq... Attempt $retry
+		
+        sleep 1
         ((retry=retry+1))
+		if [ $retry -gt 3 ]
+		then
+			echo dnsmasq could not be killed. Exiting script.
+		fi
 done
 echo dnsmasq killed!
 
