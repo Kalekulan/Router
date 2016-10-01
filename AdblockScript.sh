@@ -3,19 +3,12 @@ hostPath=$path/adblock_hosts.txt
 i=1
 exclusionListPath=$path/domainExclusions.txt
 
-#sleep 10
-
-#mkdir $path
 wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -O $hostPath
+wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
 killall dnsmasq
 #dos2unix $path/adblock_hosts.txt
 #cp /etc/storage/dnsmasq/hosts $path/original_hosts.txt
 
-#cat $path/original_hosts.txt > $path/complete_hosts.txt
-#cat $path/adblock_hosts.txt >> $path/complete_hosts.txt
-#cat $path/complete_hosts.txt >> /etc/hosts
-
-#cat $path/complete_hosts.txt > /etc/storage/dnsmasq/hosts
 
 numLines=$(wc -l < $exclusionListPath)
 #numLines=4
@@ -30,6 +23,7 @@ do
         case $STATE in
         0) #Read domain to comment
                 #echo i=$i
+                echo =========
                 lineRead=$(sed "${i}q;d" $exclusionListPath) #Read line i in domainExclusions.list
                 echo Domain to exclude: "$lineRead"
                 #echo lineRead=$lineRead
@@ -45,9 +39,10 @@ do
                 fi
                 ;;
         1) #Find read domain in hosts file
-                patternHosts=$(grep "$lineRead" $hostPath) #use "-m 1" to only take first pattern
+                patternHosts=$(grep -i -F "$lineRead" $hostPath) #use "-m 1" to only take first pattern
                 #echo patternHosts=$patternHosts
-                if [ ${#patternHosts} -le 3 ] || [ "$patternHosts" != "$lineRead" ]
+                if [ ${#patternHosts} -le 3 ]
+                # || [ "$patternHosts" != "$lineRead" ]
                 then
                         echo Domain not found in hosts file. Skipping...
                         #i=$((i+1))
@@ -99,5 +94,6 @@ ln -s /etc/hosts /etc/storage/dnsmasq/hosts
 ##ln -s /etc/storage/dnsmasq/hosts $hostPath
 
 rm $hostPath
+rm $exclusionListPath
 dnsmasq
 # **************** ADBLOCK ****************
