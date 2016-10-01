@@ -1,4 +1,4 @@
-parentPath=/media/Main/opt/usr/adblock
+#parentPath=/media/Main/opt/usr/adblock
 path=/media/Main/opt/usr/adblock/Router-dev
 zipPath=/media/Main/opt/usr/adblock/dev.zip
 hostPath=$path/adblock_hosts.txt
@@ -6,7 +6,7 @@ i=1
 exclusionListPath=$path/domainExclusions.txt
 additionListPath=$path/domainAdditions.txt
 
-mkdir $parentPath
+#mkdir $parentPath
 
 wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -O $hostPath
 #wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
