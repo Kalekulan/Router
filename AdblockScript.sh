@@ -1,4 +1,4 @@
-parentPath=path=/media/Main/opt/usr/adblock
+parentPath=/media/Main/opt/usr/adblock
 path=/media/Main/opt/usr/adblock/Router-dev
 zipPath=/media/Main/opt/usr/adblock/dev.zip
 hostPath=$path/adblock_hosts.txt
