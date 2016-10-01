@@ -1,4 +1,4 @@
-path=/media/Main/opt/usr/adblock
+path=/media/Main/opt/usr/adblock/Router-dev
 hostPath=$path/adblock_hosts.txt
 i=1
 exclusionListPath=$path/domainExclusions.txt
