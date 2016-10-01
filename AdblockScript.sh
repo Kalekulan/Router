@@ -1,4 +1,5 @@
 path=/media/Main/opt/usr/adblock/Router-dev
+zipPath=/media/Main/opt/usr/adblock/dev.zip
 hostPath=$path/adblock_hosts.txt
 i=1
 exclusionListPath=$path/domainExclusions.txt
@@ -99,6 +100,7 @@ ln -s /etc/hosts /etc/storage/dnsmasq/hosts
 #rm $hostPath
 #rm $exclusionListPath
 #rm $additionListPath
-rm $path/*
+rm -r $path
+rm $zipPath
 dnsmasq
 # **************** ADBLOCK ****************
