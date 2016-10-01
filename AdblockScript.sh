@@ -23,6 +23,7 @@ do
 		if [ $retry -gt 3 ]
 		then
 			echo dnsmasq could not be killed. Exiting script.
+			exit
 		fi
 done
 echo dnsmasq killed!
@@ -118,12 +119,18 @@ rm -r $parentPath
 #rm -r $path
 #rm $zipPath
 retry=1
-while ! (( ps | grep -v "grep" | grep -qF "dnsmasq" 2>/dev/null )) || (( $retry -le 3 ))
+while ! (( ps | grep -v "grep" | grep -qF "dnsmasq" 2>/dev/null )) #|| (( $retry -le 3 ))
 do
+		echo Trying to start dnsmasq... Attempt $retry
         dnsmasq
-        sleep 2
-        echo Trying to start dnsmasq... Attempt $retry
+		
+        sleep 1
         ((retry=retry+1))
+		if [ $retry -gt 3 ]
+		then
+			echo dnsmasq could not be started. Exiting script.
+			exit
+		fi
 done
 echo dnsmasq started!
 #dnsmasq
