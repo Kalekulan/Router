@@ -2,9 +2,12 @@ path=/media/Main/opt/usr/adblock
 hostPath=$path/adblock_hosts.txt
 i=1
 exclusionListPath=$path/domainExclusions.txt
+additionListPath=$path/domainAdditions.txt
 
 wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -O $hostPath
 wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
+wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainAdditions.txt -O $additionListPath
+
 killall dnsmasq
 #dos2unix $path/adblock_hosts.txt
 #cp /etc/storage/dnsmasq/hosts $path/original_hosts.txt
@@ -83,7 +86,7 @@ do
 done
 
 
-cat $path/original_hosts.txt > /etc/storage/dnsmasq/hosts
+cat $additionListPath > /etc/storage/dnsmasq/hosts
 cat $hostPath >> /etc/storage/dnsmasq/hosts
 
 ln -s /etc/hosts /etc/storage/dnsmasq/hosts
@@ -95,5 +98,6 @@ ln -s /etc/hosts /etc/storage/dnsmasq/hosts
 
 rm $hostPath
 rm $exclusionListPath
+rm $additionListPath
 dnsmasq
 # **************** ADBLOCK ****************

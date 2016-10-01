@@ -1,0 +1,8 @@
+#Custom user hosts file
+# Example:
+# 192.168.1.100         Boo
+#192.168.10.110 kalx.ddns.net
+192.168.10.108 pimatic.local
+
+0.0.0.0 bn-01.adtomafusion.net
+0.0.0.0 adserver.storymedia.se
