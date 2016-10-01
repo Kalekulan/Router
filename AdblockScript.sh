@@ -5,8 +5,8 @@ exclusionListPath=$path/domainExclusions.txt
 additionListPath=$path/domainAdditions.txt
 
 wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -O $hostPath
-wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
-wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainAdditions.txt -O $additionListPath
+#wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
+#wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainAdditions.txt -O $additionListPath
 
 killall dnsmasq
 #dos2unix $path/adblock_hosts.txt
@@ -96,8 +96,9 @@ ln -s /etc/hosts /etc/storage/dnsmasq/hosts
 
 ##ln -s /etc/storage/dnsmasq/hosts $hostPath
 
-rm $hostPath
-rm $exclusionListPath
-rm $additionListPath
+#rm $hostPath
+#rm $exclusionListPath
+#rm $additionListPath
+rm $path/*
 dnsmasq
 # **************** ADBLOCK ****************
