@@ -10,6 +10,6 @@
 0.0.0.0 plugin.adonnews.com
 0.0.0.0 fusion.expressen.se
 0.0.0.0 files.adform.net
-
+0.0.0.0 logs2.xiti.com
 #END OF OWN DNS
 
