@@ -1,12 +1,16 @@
 parentPath=/media/Main/opt/usr/adblock
-path=/media/Main/opt/usr/adblock/Router-dev
-zipPath=/media/Main/opt/usr/adblock/dev.zip
+path=/media/Main/opt/usr/adblock
+#zipPath=/media/Main/opt/usr/adblock/dev.zip
 hostPath=$path/adblock_hosts.txt
 i=1
 exclusionListPath=$path/domainExclusions.txt
 additionListPath=$path/domainAdditions.txt
 retry=1
 #mkdir $parentPath
+#
+#Startup script: 
+#mkdir /media/Main/opt/usr/adblock && git clone git://github.com/Kalekulan/Router.git /media/Main/opt/usr/adblock && bash -x /media/Main/opt/usr/adblock/AdblockScript.sh
+#
 
 wget --timeout=10 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -O $hostPath
 #wget --timeout=10 https://raw.githubusercontent.com/Kalekulan/Router/dev/domainExclusions.txt -O $exclusionListPath
