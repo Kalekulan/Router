@@ -119,7 +119,7 @@ ln -s /etc/hosts /etc/storage/dnsmasq/hosts
 
 ##ln -s /etc/storage/dnsmasq/hosts $hostPath
 
-rm -r $parentPath
+#rm -r $parentPath
 #rm -r $path
 #rm $zipPath
 retry=1
