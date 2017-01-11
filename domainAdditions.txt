@@ -19,7 +19,7 @@
 0.0.0.0 ams1-1b.adnxs.com
 0.0.0.0 track.adform.net
 0.0.0.0 sting.de17a.com
-0.0.0.0 s1.adform.net
+#0.0.0.0 s1.adform.net
 0.0.0.0 aka-cdn-ns.adtech.de
 0.0.0.0 adv.prisjakt.nu
 #END OF OWN DNS
