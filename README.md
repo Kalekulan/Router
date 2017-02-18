@@ -4,8 +4,7 @@
 Install git: opkg install git  
 
 ## Cronjob
-mkdir /media/Main/opt/usr/adblock && /opt/bin/git clone git://github.com/Kalekulan/Router.git /media/Main/opt/usr/adblock && bash -x /media/Main/opt/usr/adblock/AdblockScript.sh && rm -r /media/Main/opt/usr/adblock   
-
+mkdir /media/Main/opt/usr/adblock && /opt/bin/git clone git://github.com/Kalekulan/Router.git /media/Main/opt/usr/adblock && bash -x /media/Main/opt/usr/adblock/AdblockScript.sh && rm -r /media/Main/opt/usr/adblock
 
 
 
