@@ -18,4 +18,4 @@ mkdir $targetDir >> $logPath
 /opt/bin/git clone --progress git://github.com/Kalekulan/Router.git /media/Main/opt/usr/adblock 2>> $logPath  
 bash -x $targetDir/AdblockScript.sh >> $logPath  
 rm -r $targetDir  
-echo "****************************************************" >> $logPath  
+echo "****************************************************" >> $logPath
